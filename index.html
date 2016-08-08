@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <title>ALZH微商城</title>
+        <link rel="stylesheet" href="assets/agile/css/agile.layout.css">
+        <link rel="stylesheet" href="assets/third/seedsui/plugin/seedsui/seedsui.min.css">
+        <link rel="stylesheet" href="assets/app/css/app.css">
+    </head>
+	<body>
+        <div id="section_container">
+		    <section id="slider_section" data-role="section" class="active">
+			    <header>
+			    	<div class="titlebar">
+                        <h1 class="text-center"><img src="update/logo.png" alt="" style="width: 34%;"></h1>
+                    </div>
+			    </header>
+			    <article  data-role="article" id="slider_article" class="active" style="top:44px;bottom:54px;">
+			    <div class="scroller">
+				    <div id="slide" data-role="slider" class="full" style="overflow: hidden; height:auto;">
+                        <div class="scroller">
+                            <div class="slide">
+                                <img data-source="update/new-img-lg01.png" class="full-width"/>
+                            </div>
+                            <div class="slide">
+                                <img data-source="update/new-img-lg01.png" class="full-width"/>
+                            </div>
+                            <div class="slide">
+                                <img data-source="update/new-img-lg01.png" class="full-width"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="new-box">
+                    	<div class="infor">
+                    		<h1 class="list-tit"><i class="icon icon-tit"></i>资讯列表<a href="" class="float-right">更多</a></h1>
+                    		<div class="new-list clearfix" href="news/article-info.html" data-toggle="html">
+                                <div class="img" style="width:32%">
+                                    <img data-source="update/new-img01.png" >
+                                </div>
+                    			<p class="title" style="width:63%">单身母亲被警方带走，背后原因竟是为补贴家用超市行窃包含牙膏牙刷</p>
+                    			<div class="news-bottom">
+                    				<span>1分钟</span>
+                    				<span>电视台新网部</span>
+                    				<span><i class="icon-chatdot"></i>66评论</span>
+                    				<span class="lable">
+                                					图片
+                                				</span>
+                    			</div>
+                    			<hr>
+                    		</div>
+                    	</div>
+                    </div>
+                </div>
+			    </article>
+			    <footer>
+                    <ul class="menubar">
+                        <li class="tab active" href="index.html" data-toggle="html">
+                            <i class="icon icon-new"></i>
+                            <label class="tab-label">首页</label>
+                        </li>
+                        <li class="tab" href="video/index.html" data-toggle="html">
+                            <i class="icon icon-viode"></i>
+                            <label class="tab-label">资讯</label>
+                        </li>
+                        <li class="tab" href="interact/index.html" data-toggle="html">
+                            <i class="icon icon-interact"></i>
+                            <label class="tab-label">活动</label>
+                        </li>
+                        <li class="tab" href="user/index.html" data-toggle="html">
+                            <i class="icon icon-users"></i>
+                            <label class="tab-label">个人</label>
+                        </li>
+                    </ul>
+                </footer>
+		    </section>
+        </div>
+
+        <!--- third -->
+        <script src="assets/third/jquery/jquery-2.1.3.min.js"></script>
+        <script src="assets/third/jquery/jquery.mobile.custom.min.js"></script>
+        <script src="assets/third/iscroll/iscroll-probe.js"></script>
+        <!---  agile -->
+        <script type="text/javascript" src="assets/agile/js/agile.js"></script>
+        <!-- app -->
+        <script type="text/javascript" src="assets/app/js/app.seedsui.js"></script>
+
+        <script>
+
+        $('#slider_article').on('articleload', function(){
+            A.Slider('#slide', {
+                dots : 'right'
+            });
+            A.Slider('#sliderPage', {
+                dots : 'hide'
+            });
+        });
+        $('#slide img').on(A.options.clickEvent, function(){
+            //var $el = $(this);
+            //A.showToast($el.siblings('.slider_label').html());
+            A.Component.pictureShow({
+                id : 'picture',
+                index : $("#slide .slide").index($("#slide .slide.active")),
+                title : '这是默认标题',
+                list : [
+                    {
+                        imgURL : 'update/new-img-lg01.png',
+                    },
+                    {
+                        imgURL : 'update/new-img-lg01.png',
+                    },
+                    {
+                        imgURL : 'update/new-img-lg01.png',
+                    }
+                ]
+            });
+        });
+        </script>
+    </body>
+</html>
